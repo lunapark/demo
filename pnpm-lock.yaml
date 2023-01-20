@@ -7,18 +7,20 @@ importers:
 
   vue:
     specifiers:
-      '@luna-park/integration': ../../lunapark/packages/integration
       '@luna-park/lib-standard': ../../lunapark/packages/lib/standard
       '@luna-park/lib-string': ../../lunapark/packages/lib/string
+      '@luna-park/logicnodes': ../../lunapark/packages/logicnodes
       '@vitejs/plugin-vue': ^4.0.0
+      luna-park: ../../lunapark/packages/integration
       sass: ^1.56.2
       typescript: ^4.9.4
       vite: ^4.0.0
       vue: ^3.2.45
     dependencies:
-      '@luna-park/integration': link:../../lunapark/packages/integration
       '@luna-park/lib-standard': link:../../lunapark/packages/lib/standard
       '@luna-park/lib-string': link:../../lunapark/packages/lib/string
+      '@luna-park/logicnodes': link:../../lunapark/packages/logicnodes
+      luna-park: link:../../lunapark/packages/integration
       vue: 3.2.45
     devDependencies:
       '@vitejs/plugin-vue': 4.0.0_vite@4.0.0+vue@3.2.45

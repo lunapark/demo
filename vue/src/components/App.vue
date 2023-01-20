@@ -1,6 +1,9 @@
 <template>
-    <div class="app" ref="app">
-        App
+    <div class="app">
+        <lp-theme primary="#ffff00" tint="#000000"/>
+        <button @click="triggerLogic">Trigger logic</button>
+        <div class="editor" ref="editorWrapper"></div>
+        <div class="console" ref="consoleWrapper"></div>
     </div>
 </template>
 
@@ -11,25 +14,58 @@ export default {
 </script>
 
 <script setup lang="ts">
-
-import { LPFunctionEditor, loadApplication, loadNodeLib } from "@luna-park/integration";
 import { onMounted, ref } from "vue";
-import {LogicNodes as LogicNodesStandard} from "@luna-park/lib-standard"
-import {LogicNodes as LogicNodesString} from "@luna-park/lib-string"
+import {
+    LpLogicEditor,
+    loadNodeLib,
+    LpEditorConsole,
+    TLogicInterface,
+    loadStandaloneLogic,
+    getStandaloneCaller
+} from "luna-park";
+import { LogicNodes as LogicNodesStandard } from "@luna-park/lib-standard";
+import { LogicNodes as LogicNodesString } from "@luna-park/lib-string";
+import { LogicType } from "@luna-park/logicnodes";
 
-const app = ref();
+const editorWrapper = ref<HTMLDivElement>();
+const consoleWrapper = ref<HTMLDivElement>();
+const editorId = "demo-editor";
+
+loadNodeLib(editorId, LogicNodesStandard);
+loadNodeLib(editorId, LogicNodesString);
+
+const myLogicInterface = {
+    inputs: {
+        in_exec: { name: "", schema: LogicType.exec() },
+        in_A: { name: "A", schema: LogicType.number() },
+        in_B: { name: "B", schema: LogicType.boolean() }
+    },
+    outputs: {
+        out_exec: { name: "", schema: LogicType.exec() },
+        out_C: { name: "C", schema: LogicType.number() },
+        out_D: { name: "D", schema: LogicType.string() }
+    }
+} satisfies TLogicInterface;
+
+const myLogic = loadStandaloneLogic(myLogicInterface, editorId);
+const caller = getStandaloneCaller(myLogic, "out_exec");
+
+const lpEditor = new LpLogicEditor({ editorId });
+const lpConsole = new LpEditorConsole({ editorId });
 
 onMounted(() => {
-    loadApplication();
-    loadNodeLib("demo", LogicNodesStandard)
-    loadNodeLib("demo", LogicNodesString)
-    const editor = new LPFunctionEditor({ editorId: "demo", standalone: true });
-    app.value.append(editor);
+    editorWrapper.value?.append(lpEditor);
+    consoleWrapper.value?.append(lpConsole);
 });
+
+async function triggerLogic() {
+    console.log(await caller({ in_A: 5, in_B: true }));
+    console.log(await caller({ in_A: 2, in_B: false }));
+}
 </script>
 
 <style scoped lang="scss">
-.app {
+.editor, .console {
     height: 400px;
 }
 </style>

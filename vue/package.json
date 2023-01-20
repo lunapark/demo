@@ -13,7 +13,8 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@luna-park/integration": "../../lunapark/packages/integration",
+        "luna-park": "../../lunapark/packages/integration",
+        "@luna-park/logicnodes": "../../lunapark/packages/logicnodes",
         "@luna-park/lib-standard": "../../lunapark/packages/lib/standard",
         "@luna-park/lib-string": "../../lunapark/packages/lib/string",
         "vue": "^3.2.45"

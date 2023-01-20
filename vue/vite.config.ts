@@ -11,7 +11,15 @@ const alias = {
 
 export default defineConfig(({ command }) => {
     const config: UserConfig = {
-        plugins: [vue()],
+        plugins: [vue(
+            {
+                template: {
+                    compilerOptions: {
+                        isCustomElement: tag => tag.startsWith('lp-'),
+                    },
+                },
+            }
+        )],
         resolve: {
             alias
         },
