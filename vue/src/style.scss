@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600");
+
+:root, :host {
+    --font-content: "Poppins", sans-serif;
+    --color-content: hsl(30deg, 10%, 80%);
+    --color-background: hsl(30deg, 10%, 15%);
+}
+
+body, input, button {
+    font-family: var(--font-content);
+    color: var(--color-content);
+}
+
+body {
+    background: hsl(30deg, 10%, 10%);
+}
+
+input, button {
+    background: hsl(30deg, 10%, 20%);
+    border: 2px solid hsl(30deg, 10%, 30%);
+    padding: 4px 8px;
+    border-radius: 8px;
+
+    &:hover, &:focus {
+        background: hsl(30deg, 10%, 23%);
+    }
+}
+
+button {
+    cursor: pointer;
+}
