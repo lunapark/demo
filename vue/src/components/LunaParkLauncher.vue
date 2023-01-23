@@ -12,7 +12,7 @@
         </div>
         <div class="inputs_pre">
             Outputs:
-            <pre>{{ callerOutputs }}</pre>
+            <pre>{{ callerOutput }}</pre>
         </div>
     </div>
 </template>
@@ -33,10 +33,10 @@ const inputA = ref(5);
 const inputB = ref("Hello world!");
 
 const callerInput = computed(() => ({ in_A: inputA.value, in_B: inputB.value }));
-const callerOutputs = ref();
+const callerOutput = ref();
 
 async function triggerLogic() {
-    callerOutputs.value = await caller(callerInput.value)
+    callerOutput.value = await caller(callerInput.value)
 }
 </script>
 

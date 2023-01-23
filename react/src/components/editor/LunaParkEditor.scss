@@ -1,0 +1,41 @@
+.editor-wrapper {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr 196px;
+    grid-template-areas:
+            "tabstrip tabstrip"
+            "editor inspector"
+            "console inspector";
+
+    .editor {
+        height: 320px;
+
+        &::part(luna-park) {
+            border-radius: 16px;
+        }
+    }
+
+    .console, .inspector {
+        border-radius: 16px;
+        overflow: hidden;
+        height: 160px;
+        background: var(--color-background);
+    }
+
+    .editor {
+        grid-area: editor;
+    }
+
+    .console {
+        grid-area: console;
+    }
+
+    .tab-strip {
+        grid-area: tabstrip;
+    }
+
+    .inspector {
+        grid-area: inspector;
+        height: 100%;
+    }
+}

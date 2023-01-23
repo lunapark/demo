@@ -4,8 +4,6 @@ import {
     getStandaloneCaller,
     loadNodeLib,
     loadStandaloneLogic,
-    LpConsolePanel, LpInspectorPanel,
-    LpLogicEditor, LpTabStrip,
     TLogicInterface
 } from "luna-park";
 import { LogicNodes as LogicNodesStandard } from "@luna-park/lib-standard";
@@ -35,10 +33,17 @@ const myLogicInterface = {
 const myLogic = loadStandaloneLogic(myLogicInterface, editorId);
 const caller = getStandaloneCaller(myLogic, "out_exec");
 
-document.querySelector("#editor")?.append(new LpLogicEditor({ editorId }));
-document.querySelector("#console")?.append(new LpConsolePanel({ editorId }));
-document.querySelector("#inspector")?.append(new LpInspectorPanel({ editorId }));
-document.querySelector("#tab-strip")?.append(new LpTabStrip({ editorId, standalone: true }));
+const editorWrapperElement = document.querySelector("#editor-wrapper");
+
+if (editorWrapperElement) {
+    editorWrapperElement.innerHTML = `
+<lp-tab-strip editor-id=${editorId} class="tab-strip" standalone></lp-tab-strip>
+<lp-logic-editor editor-id=${editorId} class="editor"></lp-logic-editor>
+<lp-console-panel editor-id=${editorId} class="console"></lp-console-panel>
+<lp-inspector-panel editor-id=${editorId} class="inspector"></lp-inspector-panel>
+    `.trim();
+}
+
 
 async function triggerCaller() {
     const inputElement = document.querySelector("#input");
