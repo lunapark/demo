@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Luna Park Vanilla TS demo</title>
+</head>
+<body>
+<script type="module" src="/src/main.ts"></script>
+<div id="app">
+    <lp-theme primary="#ffff00" tint="#101000"></lp-theme>
+    <div class="wrapper">
+        <h1>Luna Park editor - Demo</h1>
+        <div class="editor-wrapper">
+            <div id="tab-strip" class="tab-strip"></div>
+            <div id="editor" class="editor"></div>
+            <div id="console" class="console"></div>
+            <div id="inspector" class="inspector"></div>
+        </div>
+        <div class="luna-park-launcher">
+            <div class="inputs">
+                <div>Input A : <input type="number" id="inputA" value="5"/></div>
+                <div>Input B : <input type="text" id="inputB" value="Hello world!"/></div>
+
+                <button id="launch-button">Launch</button>
+            </div>
+            <div class="inputs_pre">
+                Inputs:
+                <pre id="input"></pre>
+            </div>
+            <div class="inputs_pre">
+                Outputs:
+                <pre id="output"></pre>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

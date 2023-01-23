@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600");
+
+:root, :host {
+    --font-content: "Poppins", sans-serif;
+    --color-content: hsl(30deg, 10%, 80%);
+    --color-background: hsl(30deg, 10%, 15%);
+}
+
+body, input, button {
+    font-family: var(--font-content);
+    color: var(--color-content);
+}
+
+body {
+    background: hsl(30deg, 10%, 10%);
+}
+
+input, button {
+    background: hsl(30deg, 10%, 20%);
+    border: 2px solid hsl(30deg, 10%, 30%);
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+
+
+input:hover, input:focus, button:hover, input:hover {
+    background: hsl(30deg, 10%, 23%);
+}
+
+button {
+    cursor: pointer;
+}
+
+/* App Style */
+
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#app .wrapper {
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Editor Style */
+
+.editor-wrapper {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr 196px;
+    grid-template-areas:
+            "tabstrip tabstrip"
+            "editor inspector"
+            "console inspector";
+}
+
+.editor {
+    height: 320px;
+}
+
+.editor ::part(luna-park) {
+    border-radius: 16px;
+}
+
+.console, .inspector {
+    border-radius: 16px;
+    overflow: hidden;
+    height: 160px;
+    background: var(--color-background);
+}
+
+.editor {
+    grid-area: editor;
+}
+
+.console {
+    grid-area: console;
+}
+
+.tab-strip {
+    grid-area: tabstrip;
+}
+
+.inspector {
+    grid-area: inspector;
+    height: 100%;
+}
+
+/* Launcher Style */
+
+.luna-park-launcher {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+}
+.luna-park-launcher > * {
+      background: var(--color-background);
+      border-radius: 16px;
+      padding: 8px;
+      flex-grow: 1;
+      flex-basis: 100%;
+  }
+
+.inputs {
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+}
+
+input, button {
+    width: 128px;
+}
+
+
+pre {
+    margin: 0;
+}

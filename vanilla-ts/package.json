@@ -1,0 +1,22 @@
+{
+    "name": "lunapark-demo-vanilla-ts",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "@luna-park/lib-math": "link:..\\..\\lunapark\\packages\\lib\\math",
+        "@luna-park/lib-standard": "link:..\\..\\lunapark\\packages\\lib\\standard",
+        "@luna-park/lib-string": "link:..\\..\\lunapark\\packages\\lib\\string",
+        "@luna-park/logicnodes": "link:..\\..\\lunapark\\packages\\logicnodes",
+        "luna-park": "link:..\\..\\lunapark\\packages\\integration"
+    },
+    "devDependencies": {
+        "typescript": "^4.9.4",
+        "vite": "^4.0.4"
+    }
+}
