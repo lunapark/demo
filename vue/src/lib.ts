@@ -2,7 +2,8 @@ import {
     getStandaloneCaller,
     loadNodeLib,
     loadStandaloneLogic,
-    TLogicInterface
+    TLogicInterface,
+    setAPIKey
 } from "luna-park";
 import { LogicNodes as LogicNodesStandard } from "@luna-park/lib-standard";
 import { LogicNodes as LogicNodesString } from "@luna-park/lib-string";
@@ -11,7 +12,8 @@ import { LogicType } from "@luna-park/logicnodes";
 
 export const editorId = "demo-editor";
 
-export function loadNodeLibs() {
+export function initEditor() {
+    setAPIKey("lp_public:abc123");
     loadNodeLib(editorId, LogicNodesStandard);
     loadNodeLib(editorId, LogicNodesString);
     loadNodeLib(editorId, LogicNodesMath);

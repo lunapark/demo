@@ -15,9 +15,9 @@ export default {
 
 <script setup lang="ts">
 import "luna-park";
-import { editorId, getCaller, loadNodeLibs } from "@/lib";
+import { editorId, getCaller, initEditor } from "@/lib";
 
-loadNodeLibs();
+initEditor();
 getCaller();
 </script>
 

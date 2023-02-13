@@ -9,11 +9,11 @@
         "preview": "vite preview"
     },
     "dependencies": {
-        "@luna-park/lib-math": "link:..\\..\\lunapark\\packages\\lib\\math",
-        "@luna-park/lib-standard": "link:..\\..\\lunapark\\packages\\lib\\standard",
-        "@luna-park/lib-string": "link:..\\..\\lunapark\\packages\\lib\\string",
-        "@luna-park/logicnodes": "link:..\\..\\lunapark\\packages\\logicnodes",
-        "luna-park": "link:..\\..\\lunapark\\packages\\integration",
+        "@luna-park/lib-math": "link:..\\..\\core\\packages\\lib\\math",
+        "@luna-park/lib-standard": "link:..\\..\\core\\packages\\lib\\standard",
+        "@luna-park/lib-string": "link:..\\..\\core\\packages\\lib\\string",
+        "@luna-park/logicnodes": "link:..\\..\\core\\packages\\logicnodes",
+        "luna-park": "link:..\\..\\core\\packages\\integration",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     },

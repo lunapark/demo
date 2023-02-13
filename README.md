@@ -10,7 +10,7 @@ This repository showcase how to use the [`luna-park`](https://www.npmjs.com/pack
 
 # Try the editor
 
-You can try out the editor on the [Luna Park website](https://luna-park.app). If you want to learn how to use visual scripting, you can take up the [Luna Park challenge](https://luna-park.app/challenge), a series of puzzle that will teach you the basics in a gamify way.
+You can try out the editor on the [Luna Park website](https://luna-park.app). If you want to learn how to use visual scripting, you can take up the [Luna Park challenge](https://luna-park.app/challenge), a series of puzzle that will teach you the basics in a gamified way.
 
 # Documentation
 
