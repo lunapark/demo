@@ -3,12 +3,15 @@ import {
     loadNodeLib,
     loadStandaloneLogic,
     TLogicInterface,
-    setAPIKey
+    setAPIKey,
+    exportLogic,
+    loadSavedLogic
 } from "luna-park";
 import { LogicNodes as LogicNodesStandard } from "@luna-park/lib-standard";
 import { LogicNodes as LogicNodesString } from "@luna-park/lib-string";
 import { LogicNodes as LogicNodesMath } from "@luna-park/lib-math";
 import { LogicType } from "@luna-park/logicnodes";
+import { nextTick, ref } from "vue";
 
 export const editorId = "demo-editor";
 
@@ -19,7 +22,7 @@ export function initEditor() {
     loadNodeLib(editorId, LogicNodesMath);
 }
 
-let caller:ReturnType<typeof generateCaller>;
+let caller: ReturnType<typeof generateCaller>;
 
 function generateCaller() {
     const myLogicInterface = {
@@ -37,6 +40,22 @@ function generateCaller() {
 
     const myLogic = loadStandaloneLogic(myLogicInterface, editorId);
     return getStandaloneCaller(myLogic, "out_exec");
+}
+
+export function saveLogic() {
+    const savedLogic = exportLogic(editorId);
+    localStorage.setItem("savedLogic", savedLogic);
+    alert("Logic graph saved to local storage!");
+}
+
+export async function loadLogic() {
+    const loadedLogic = localStorage.getItem("savedLogic");
+    if (!loadedLogic) {
+        alert("No logic graph found in local storage...");
+        return;
+    }
+    const myLogic = loadSavedLogic(loadedLogic, editorId);
+    caller = getStandaloneCaller(myLogic, "out_exec");
 }
 
 export function getCaller() {

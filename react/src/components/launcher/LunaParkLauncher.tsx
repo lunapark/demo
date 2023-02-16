@@ -1,6 +1,6 @@
-import React, { ChangeEventHandler, useState } from "react";
+import React, { ChangeEventHandler, useReducer, useState } from "react";
 import "./LunaParkLauncher.scss";
-import { getCaller } from "../../lib";
+import { getCaller, loadLogic, saveLogic } from "../../lib";
 
 export function LunaParkLauncher() {
     const [inputA, setInputA] = useState(5);
@@ -15,7 +15,7 @@ export function LunaParkLauncher() {
     const caller = getCaller();
 
     async function triggerLogic() {
-        setOutput(await caller({ in_A: inputA, in_B: inputB }))
+        setOutput(await caller({ in_A: inputA, in_B: inputB }));
     }
 
     return (
@@ -24,7 +24,11 @@ export function LunaParkLauncher() {
                 <div>Input A : <input type="number" value={inputA} onChange={handleInputA}/></div>
                 <div>Input B : <input type="text" value={inputB} onChange={handleInputB}/></div>
 
-                <button onClick={triggerLogic}>Launch</button>
+                <div className="button-wrapper">
+                    <button onClick={triggerLogic}>Launch</button>
+                    <button onClick={saveLogic}>Save<span className="description">(local storage)</span></button>
+                    <button onClick={loadLogic}>Load<span className="description">(local storage)</span></button>
+                </div>
             </div>
             <div className="inputs_pre">
                 Inputs:

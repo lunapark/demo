@@ -4,7 +4,11 @@
             <div>Input A : <input type="text" v-model="inputA"/></div>
             <div>Input B : <input type="text" v-model="inputB"/></div>
 
-            <button @click="triggerLogic">Launch</button>
+            <div class="button-wrapper">
+                <button @click="triggerLogic">Launch</button>
+                <button @click="saveLogic">Save<span class="description">(local storage)</span></button>
+                <button @click="loadLogic">Load<span class="description">(local storage)</span></button>
+            </div>
         </div>
         <div class="inputs_pre">
             Inputs:
@@ -24,10 +28,8 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { getCaller } from "@/lib";
+import { getCaller, loadLogic, saveLogic } from "@/lib";
 import { computed, ref } from "vue";
-
-const caller = getCaller();
 
 const inputA = ref(5);
 const inputB = ref("Hello world!");
@@ -36,7 +38,8 @@ const callerInput = computed(() => ({ in_A: inputA.value, in_B: inputB.value }))
 const callerOutput = ref();
 
 async function triggerLogic() {
-    callerOutput.value = await caller(callerInput.value)
+    const caller = getCaller();
+    callerOutput.value = await caller(callerInput.value);
 }
 </script>
 
@@ -59,8 +62,23 @@ async function triggerLogic() {
         gap: 4px;
         flex-direction: column;
 
-        input, button {
+        input {
             width: 128px;
+        }
+    }
+
+    .button-wrapper {
+        display: flex;
+        gap: 4px;
+
+        button {
+            flex-grow: 1;
+            flex-basis: 33%;
+
+            .description {
+                display: block;
+                font-size: 0.6rem;
+            }
         }
     }
 

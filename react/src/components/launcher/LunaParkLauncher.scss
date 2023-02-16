@@ -21,6 +21,21 @@
         }
     }
 
+    .button-wrapper {
+        display: flex;
+        gap: 4px;
+
+        button {
+            flex-grow: 1;
+            flex-basis: 33%;
+
+            .description {
+                display: block;
+                font-size: 0.6rem;
+            }
+        }
+    }
+
     pre {
         margin: 0;
     }

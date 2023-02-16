@@ -1,6 +1,7 @@
 import {
+    exportLogic,
     getStandaloneCaller,
-    loadNodeLib,
+    loadNodeLib, loadSavedLogic,
     loadStandaloneLogic,
     setAPIKey,
     TLogicInterface
@@ -19,7 +20,7 @@ export function initEditor() {
     loadNodeLib(editorId, LogicNodesMath);
 }
 
-let caller:ReturnType<typeof generateCaller>;
+let caller: ReturnType<typeof generateCaller>;
 
 function generateCaller() {
     const myLogicInterface = {
@@ -37,6 +38,22 @@ function generateCaller() {
 
     const myLogic = loadStandaloneLogic(myLogicInterface, editorId);
     return getStandaloneCaller(myLogic, "out_exec");
+}
+
+export function saveLogic() {
+    const savedLogic = exportLogic(editorId);
+    localStorage.setItem("savedLogic", savedLogic);
+    alert("Logic graph saved to local storage!");
+}
+
+export async function loadLogic() {
+    const loadedLogic = localStorage.getItem("savedLogic");
+    if (!loadedLogic) {
+        alert("No logic graph found in local storage...");
+        return;
+    }
+    const myLogic = loadSavedLogic(loadedLogic, editorId);
+    caller = getStandaloneCaller(myLogic, "out_exec");
 }
 
 export function getCaller() {
