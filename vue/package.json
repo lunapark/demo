@@ -13,17 +13,17 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@luna-park/lib-math": "link:..\\..\\core\\packages\\lib\\math",
-        "@luna-park/lib-standard": "link:..\\..\\core\\packages\\lib\\standard",
-        "@luna-park/lib-string": "link:..\\..\\core\\packages\\lib\\string",
-        "@luna-park/logicnodes": "link:..\\..\\core\\packages\\logicnodes",
-        "luna-park": "link:..\\..\\core\\packages\\integration",
-        "vue": "^3.2.45"
+        "@luna-park/lib-math": "^1.0.1",
+        "@luna-park/lib-standard": "^1.0.2",
+        "@luna-park/lib-string": "^1.0.0",
+        "@luna-park/logicnodes": "^1.0.3",
+        "luna-park": "^1.2.0",
+        "vue": "^3.2.47"
     },
     "devDependencies": {
         "@vitejs/plugin-vue": "^4.0.0",
-        "sass": "^1.57.1",
-        "typescript": "^4.9.4",
-        "vite": "^4.0.4"
+        "sass": "^1.58.3",
+        "typescript": "^4.9.5",
+        "vite": "^4.1.4"
     }
 }
