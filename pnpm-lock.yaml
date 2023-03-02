@@ -14,7 +14,7 @@ importers:
       '@types/react': ^18.0.28
       '@types/react-dom': ^18.0.11
       '@vitejs/plugin-react-swc': ^3.2.0
-      luna-park: ^1.2.0
+      luna-park: ^1.3.0
       react: ^18.2.0
       react-dom: ^18.2.0
       sass: ^1.58.3
@@ -25,7 +25,7 @@ importers:
       '@luna-park/lib-standard': 1.0.2
       '@luna-park/lib-string': 1.0.0_djt3gkfntpxccu54yqtyvjgkf4
       '@luna-park/logicnodes': 1.0.3
-      luna-park: 1.2.0_typescript@4.9.5
+      luna-park: 1.3.0_typescript@4.9.5
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     devDependencies:
@@ -42,7 +42,7 @@ importers:
       '@luna-park/lib-standard': ^1.0.2
       '@luna-park/lib-string': ^1.0.0
       '@luna-park/logicnodes': ^1.0.3
-      luna-park: ^1.2.0
+      luna-park: ^1.3.0
       typescript: ^4.9.5
       vite: ^4.1.4
     dependencies:
@@ -50,7 +50,7 @@ importers:
       '@luna-park/lib-standard': 1.0.2
       '@luna-park/lib-string': 1.0.0_djt3gkfntpxccu54yqtyvjgkf4
       '@luna-park/logicnodes': 1.0.3
-      luna-park: 1.2.0_typescript@4.9.5
+      luna-park: 1.3.0_typescript@4.9.5
     devDependencies:
       typescript: 4.9.5
       vite: 4.1.4
@@ -62,7 +62,7 @@ importers:
       '@luna-park/lib-string': ^1.0.0
       '@luna-park/logicnodes': ^1.0.3
       '@vitejs/plugin-vue': ^4.0.0
-      luna-park: ^1.2.0
+      luna-park: ^1.3.0
       sass: ^1.58.3
       typescript: ^4.9.5
       vite: ^4.1.4
@@ -72,7 +72,7 @@ importers:
       '@luna-park/lib-standard': 1.0.2
       '@luna-park/lib-string': 1.0.0_djt3gkfntpxccu54yqtyvjgkf4
       '@luna-park/logicnodes': 1.0.3
-      luna-park: 1.2.0_typescript@4.9.5
+      luna-park: 1.3.0_typescript@4.9.5
       vue: 3.2.47
     devDependencies:
       '@vitejs/plugin-vue': 4.0.0_vite@4.1.4+vue@3.2.47
@@ -750,8 +750,8 @@ packages:
       js-tokens: 4.0.0
     dev: false
 
-  /luna-park/1.2.0_typescript@4.9.5:
-    resolution: {integrity: sha512-zuYSTXiPCxNmuxh279wcEz07OJAxYw1qnjAZrEKyPRlkZDFvKWOrntd40y/ty8r+PYiUAQtMqLPOYiqDHJ+3/Q==}
+  /luna-park/1.3.0_typescript@4.9.5:
+    resolution: {integrity: sha512-ptUgB+z8keDTVk3fNCnriiD8ClaLyZLH7T/rfbs460heHoy0KYAlnxMj6vQkIF/4eteLY4KKqvUDgM/p15u01Q==}
     dependencies:
       '@fortawesome/fontawesome-svg-core': 6.3.0
       '@fortawesome/free-brands-svg-icons': 6.3.0

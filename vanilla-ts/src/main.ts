@@ -1,9 +1,9 @@
 import "./style.css";
 import "luna-park";
 import {
-    getStandaloneCaller,
+    getLogicCaller,
     loadNodeLib,
-    loadStandaloneLogic,
+    initLogic,
     setAPIKey,
     TLogicInterface
 } from "luna-park";
@@ -32,8 +32,8 @@ const myLogicInterface = {
     }
 } satisfies TLogicInterface;
 
-const myLogic = loadStandaloneLogic(myLogicInterface, editorId);
-const caller = getStandaloneCaller(myLogic, "out_exec");
+const myLogic = initLogic(myLogicInterface, editorId);
+const caller = getLogicCaller(myLogic, "out_exec");
 
 const editorWrapperElement = document.querySelector("#editor-wrapper");
 

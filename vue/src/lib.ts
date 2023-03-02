@@ -1,7 +1,7 @@
 import {
-    getStandaloneCaller,
+    getLogicCaller,
     loadNodeLib,
-    loadStandaloneLogic,
+    initLogic,
     TLogicInterface,
     setAPIKey,
     exportLogic,
@@ -11,7 +11,6 @@ import { LogicNodes as LogicNodesStandard } from "@luna-park/lib-standard";
 import { LogicNodes as LogicNodesString } from "@luna-park/lib-string";
 import { LogicNodes as LogicNodesMath } from "@luna-park/lib-math";
 import { LogicType } from "@luna-park/logicnodes";
-import { nextTick, ref } from "vue";
 
 export const editorId = "demo-editor";
 
@@ -38,8 +37,8 @@ function generateCaller() {
         }
     } satisfies TLogicInterface;
 
-    const myLogic = loadStandaloneLogic(myLogicInterface, editorId);
-    return getStandaloneCaller(myLogic, "out_exec");
+    const myLogic = initLogic(myLogicInterface, editorId);
+    return getLogicCaller(myLogic, "out_exec");
 }
 
 export function saveLogic() {
@@ -55,7 +54,7 @@ export async function loadLogic() {
         return;
     }
     const myLogic = loadSavedLogic(loadedLogic, editorId);
-    caller = getStandaloneCaller(myLogic, "out_exec");
+    caller = getLogicCaller(myLogic, "out_exec");
 }
 
 export function getCaller() {

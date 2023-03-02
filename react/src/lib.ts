@@ -1,8 +1,8 @@
 import {
     exportLogic,
-    getStandaloneCaller,
+    getLogicCaller,
     loadNodeLib, loadSavedLogic,
-    loadStandaloneLogic,
+    initLogic,
     setAPIKey,
     TLogicInterface
 } from "luna-park";
@@ -36,8 +36,8 @@ function generateCaller() {
         }
     } satisfies TLogicInterface;
 
-    const myLogic = loadStandaloneLogic(myLogicInterface, editorId);
-    return getStandaloneCaller(myLogic, "out_exec");
+    const myLogic = initLogic(myLogicInterface, editorId);
+    return getLogicCaller(myLogic, "out_exec");
 }
 
 export function saveLogic() {
@@ -53,7 +53,7 @@ export async function loadLogic() {
         return;
     }
     const myLogic = loadSavedLogic(loadedLogic, editorId);
-    caller = getStandaloneCaller(myLogic, "out_exec");
+    caller = getLogicCaller(myLogic, "out_exec");
 }
 
 export function getCaller() {
