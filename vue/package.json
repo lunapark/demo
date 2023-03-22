@@ -17,7 +17,7 @@
         "@luna-park/lib-standard": "^1.0.2",
         "@luna-park/lib-string": "^1.0.0",
         "@luna-park/logicnodes": "^1.0.3",
-        "luna-park": "^1.3.0",
+        "luna-park": "^1.5.0",
         "vue": "^3.2.47"
     },
     "devDependencies": {

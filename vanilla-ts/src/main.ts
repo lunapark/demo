@@ -33,7 +33,7 @@ const myLogicInterface = {
 } satisfies TLogicInterface;
 
 const myLogic = initLogic(myLogicInterface, editorId);
-const caller = getLogicCaller(myLogic, "out_exec");
+const caller = getLogicCaller(myLogic, "out_exec", editorId);
 
 const editorWrapperElement = document.querySelector("#editor-wrapper");
 

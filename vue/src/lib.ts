@@ -38,7 +38,7 @@ function generateCaller() {
     } satisfies TLogicInterface;
 
     const myLogic = initLogic(myLogicInterface, editorId);
-    return getLogicCaller(myLogic, "out_exec");
+    return getLogicCaller(myLogic, "out_exec", editorId);
 }
 
 export function saveLogic() {
@@ -54,7 +54,7 @@ export async function loadLogic() {
         return;
     }
     const myLogic = loadSavedLogic(loadedLogic, editorId);
-    caller = getLogicCaller(myLogic, "out_exec");
+    caller = getLogicCaller(myLogic, "out_exec", editorId);
 }
 
 export function getCaller() {
