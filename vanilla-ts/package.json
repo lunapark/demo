@@ -9,14 +9,14 @@
         "preview": "vite preview"
     },
     "dependencies": {
-        "@luna-park/lib-math": "^1.0.1",
-        "@luna-park/lib-standard": "^1.0.2",
-        "@luna-park/lib-string": "^1.0.0",
-        "@luna-park/logicnodes": "^1.0.3",
-        "luna-park": "^1.5.0"
+        "@luna-park/lib-math": "^1.6.0",
+        "@luna-park/lib-standard": "^1.6.0",
+        "@luna-park/lib-string": "^1.6.0",
+        "@luna-park/logicnodes": "^1.6.0",
+        "luna-park": "^1.9.0"
     },
     "devDependencies": {
-        "typescript": "^4.9.5",
-        "vite": "^4.1.4"
+        "typescript": "^5.1.6",
+        "vite": "^4.4.7"
     }
 }

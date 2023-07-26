@@ -16,7 +16,7 @@ export function LunaParkEditor() {
         <div className="editor-wrapper">
             {loaded &&
                 <>
-                    <lp-tab-strip editor-id={editorId} class="tab-strip" standalone={true}/>
+                    <lp-tab-strip editor-id={editorId} class="tab-strip" mode="file"/>
                     <lp-logic-editor editor-id={editorId} class="editor"/>
                     <lp-console-panel editor-id={editorId} class="console"/>
                     <lp-inspector-panel editor-id={editorId} class="inspector"/>

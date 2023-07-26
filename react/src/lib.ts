@@ -42,7 +42,7 @@ function generateCaller() {
 
 export function saveLogic() {
     const savedLogic = exportLogic(editorId);
-    localStorage.setItem("savedLogic", savedLogic);
+    localStorage.setItem("savedLogic", JSON.stringify(savedLogic));
     alert("Logic graph saved to local storage!");
 }
 

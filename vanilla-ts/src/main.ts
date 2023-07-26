@@ -39,7 +39,7 @@ const editorWrapperElement = document.querySelector("#editor-wrapper");
 
 if (editorWrapperElement) {
     editorWrapperElement.innerHTML = `
-<lp-tab-strip editor-id=${editorId} class="tab-strip" standalone></lp-tab-strip>
+<lp-tab-strip editor-id=${editorId} class="tab-strip" mode="file"></lp-tab-strip>
 <lp-logic-editor editor-id=${editorId} class="editor"></lp-logic-editor>
 <lp-console-panel editor-id=${editorId} class="console"></lp-console-panel>
 <lp-inspector-panel editor-id=${editorId} class="inspector"></lp-inspector-panel>

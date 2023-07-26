@@ -1,6 +1,6 @@
 <template>
     <div class="editor-wrapper">
-        <lp-tab-strip :editorId="editorId" class="tab-strip" standalone/>
+        <lp-tab-strip :editorId="editorId" class="tab-strip" mode="file"/>
         <lp-logic-editor :editorId="editorId" class="editor"/>
         <lp-console-panel :editorId="editorId" class="console"/>
         <lp-inspector-panel :editorId="editorId" class="inspector"/>
